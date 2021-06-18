@@ -1,0 +1,157 @@
+/** vars **/
+:root {
+  --color-text: rgb(255, 255, 255);
+  --color-text-alt: rgb(0, 0, 0);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+ul {
+  list-style: none;
+}
+ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  color: var(--color-text);
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.page {
+  display: grid;
+  /* header nav about education projects footer */
+}
+
+/** header section **/
+.header {
+  height: 85vh;
+  background-color: rgb(27, 27, 27);
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  z-index: 5;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+}
+
+.contact-links {
+  padding: 0.5rem;
+}
+
+.contact-links img {
+  height: 40px;
+  width: 40px;
+  padding: 2px;
+  opacity: 0.75;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.contact-links img:hover {
+  opacity: 1;
+  border-color: white;
+  transform: scale(1.15);
+}
+
+.banner {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+.line {
+  height: 2px;
+  width: 75%;
+  background-color: var(--color-text);
+}
+
+/* end - header */
+
+/** nav section **/
+.nav {
+  height: 30vh;
+  background-color: aqua;
+  transform: translateY(-35%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+}
+.section-nav {
+  display: flex;
+  gap: 1rem;
+  transform: rotate(-5deg);
+}
+.section-nav-link {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.vert-bar {
+  width: 3px;
+  height: 2.5rem;
+  background-color: var(--color-text-alt);
+  opacity: 0.75;
+}
+/* end - nav */
+
+/** about section **/
+.about {
+  height: 80vh;
+  background-color: rgb(94, 133, 133);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-25%);
+  z-index: 0;
+}
+/* end - about */
+
+/** education section **/
+.education {
+  height: 80vh;
+  background-color: rgb(80, 160, 160);
+}
+/* end - education */
+
+/** projects section **/
+.projects {
+  height: 80vh;
+  background-color: rgb(38, 116, 116);
+}
+/* end - projects */
+
+/** footer section **/
+.footer {
+  height: 10vh;
+  background-color: black;
+}
+/* end - */
+
+.main-heading {
+  font-weight: 500;
+}
+.sub-heading {
+  font-weight: 400;
+}
+
+.muted {
+  /* color: rgb(218, 218, 218); */
+  opacity: 0.8;
+}
