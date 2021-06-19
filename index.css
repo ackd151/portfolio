@@ -2,6 +2,11 @@
 :root {
   --color-text: rgb(255, 255, 255);
   --color-text-alt: rgb(0, 0, 0);
+  --color-bg-dark: rgb(27, 27, 27);
+  --color-accent: rgb(0, 255, 255);
+  --color-bg-about: rgb(94, 133, 133);
+  --color-bg-skills: rgb(80, 160, 160);
+  --color-bg-projects: rgb(38, 116, 116);
 }
 
 *,
@@ -31,22 +36,17 @@ body {
 
 .page {
   display: grid;
-  /* header nav about education projects footer */
+  grid-template-rows: max-content 80vh;
 }
 
-/** header section **/
-.header {
-  height: 85vh;
-  background-color: rgb(27, 27, 27);
-  color: white;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+/** nav section **/
+.nav {
+  background-color: var(--color-bg-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   z-index: 5;
-  display: grid;
-  grid-template-rows: max-content 1fr;
-}
-
-.contact-links {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .contact-links img {
@@ -56,18 +56,74 @@ body {
   opacity: 0.75;
   border-radius: 50%;
   border: 2px solid transparent;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
-
 .contact-links img:hover {
   opacity: 1;
-  border-color: white;
+  border-color: var(--color-accent);
   transform: scale(1.15);
 }
 
+.section-nav {
+  display: flex;
+  gap: 2px;
+}
+.section-nav-li {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+.section-nav-li a {
+  transition: all 1s;
+}
+
+.section-nav-li:first-of-type {
+  background-color: var(--color-bg-about);
+}
+.section-nav-li:nth-of-type(2) {
+  background-color: var(--color-bg-skills);
+}
+.section-nav-li:nth-of-type(3) {
+  background-color: var(--color-bg-projects);
+}
+.section-nav-li:hover {
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+  transform: translateX(8px);
+}
+.section-nav-li:hover + .section-nav-li {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 10% 50%);
+}
+.section-nav-li:hover a {
+  transform: translateX(12px);
+}
+
+.section-nav-link {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 0.5rem 2rem;
+}
+.section-nav-link:hover {
+  color: var(--color-accent);
+}
+/* end - nav */
+
+/** header section **/
+.header {
+  height: 100%;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  z-index: 5;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
 .banner {
-  align-self: center;
-  justify-self: center;
   display: grid;
   justify-items: center;
   gap: 1rem;
@@ -76,44 +132,14 @@ body {
 .line {
   height: 2px;
   width: 75%;
-  background-color: var(--color-text);
+  background-color: var(--color-accent);
 }
-
 /* end - header */
-
-/** nav section **/
-.nav {
-  height: 30vh;
-  background-color: aqua;
-  transform: translateY(-35%);
-  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 4;
-}
-.section-nav {
-  display: flex;
-  gap: 1rem;
-  transform: rotate(-5deg);
-}
-.section-nav-link {
-  font-size: 2rem;
-  font-weight: 500;
-  text-transform: capitalize;
-}
-.vert-bar {
-  width: 3px;
-  height: 2.5rem;
-  background-color: var(--color-text-alt);
-  opacity: 0.75;
-}
-/* end - nav */
 
 /** about section **/
 .about {
   height: 80vh;
-  background-color: rgb(94, 133, 133);
+  background-color: var(--color-bg-about);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,17 +149,17 @@ body {
 }
 /* end - about */
 
-/** education section **/
-.education {
+/** skills section **/
+.skills {
   height: 80vh;
-  background-color: rgb(80, 160, 160);
+  background-color: var(--color-bg-skills);
 }
-/* end - education */
+/* end - skills */
 
 /** projects section **/
 .projects {
   height: 80vh;
-  background-color: rgb(38, 116, 116);
+  background-color: var(--color-bg-projects);
 }
 /* end - projects */
 
