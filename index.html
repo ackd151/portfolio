@@ -15,25 +15,28 @@
   <body>
     <div class="page">
       <nav class="nav">
-        <ul class="section-nav">
-          <li class="section-nav-li">
-            <a href="#about" class="section-nav-link"
-              >A<span class="hidden">bout</span></a
-            >
-          </li>
-          <li class="section-nav-li">
-            <a href="#skills" class="section-nav-link"
-              >S<span class="hidden">kills</span></a
-            >
-          </li>
-          <li class="section-nav-li">
-            <a href="#projects" class="section-nav-link"
-              >P<span class="hidden">rojects</span></a
-            >
-          </li>
-        </ul>
+        <div class="link-wrapper">
+          <a href="#" class="section-nav-link active"
+            >H<span class="link-text">ome</span></a
+          >
+        </div>
+        <div class="link-wrapper">
+          <a href="#about" class="section-nav-link"
+            >A<span class="link-text">bout</span></a
+          >
+        </div>
+        <div class="link-wrapper">
+          <a href="#skills" class="section-nav-link"
+            >S<span class="link-text">kills</span></a
+          >
+        </div>
+        <div class="link-wrapper">
+          <a href="#projects" class="section-nav-link"
+            >P<span class="link-text">rojects</span></a
+          >
+        </div>
       </nav>
-      <div class="header">
+      <section class="header" id="header">
         <div class="banner">
           <h1 class="main-heading">
             Dan<span class="muted">[iel]</span> Ackerman
@@ -50,16 +53,16 @@
             ><img src="images/GitHub-Mark-Light-32px.png" alt="github link"
           /></a>
         </div> -->
-      </div>
+      </section>
 
-      <div class="about" id="about">
+      <section class="about" id="about">
         <h2 class="sub-heading">Hi, I'm Dan</h2>
         <p>a full stack web and android developer living in Austin, TX.</p>
-      </div>
+      </section>
 
-      <div class="skills" id="skills"></div>
+      <section class="skills" id="skills"></section>
 
-      <div class="projects" id="projects"></div>
+      <section class="projects" id="projects"></section>
 
       <footer class="footer">
         <p>&copy; 2021 Dan Ackerman.</p>
