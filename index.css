@@ -44,8 +44,14 @@ section {
   align-items: center;
 }
 .section-body {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+}
+.section-heading {
+  /* color: var(--color-text-alt); */
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px var(--color-text-alt);
 }
 
 /** nav section **/
@@ -114,14 +120,7 @@ section {
 
 /** header section **/
 .header {
-  height: 95vh;
-  /* background: linear-gradient(
-    175deg,
-    var(--color-black) 20%,
-    var(--color-bg-dark) 70%,
-    var(--color-bg-dark-grad) 90%,
-    var(--color-bg-about)
-  ); */
+  height: 98vh;
   background-color: var(--color-bg-dark);
   color: var(--color-text);
   clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
@@ -130,13 +129,24 @@ section {
   justify-items: center;
   align-items: center;
 }
-
+.header-wrap {
+  background-color: var(--color-accent);
+  padding-bottom: 3px;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
 .banner {
   display: grid;
   justify-items: center;
   gap: 1rem;
 }
-
+.main-heading {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.sub-heading {
+  font-size: 2rem;
+  font-weight: 400;
+}
 .line {
   height: 2px;
   width: 75%;
@@ -159,15 +169,42 @@ section {
 
 /** skills section **/
 .skills {
-  height: 80vh;
+  padding: 5rem 0;
   background-color: var(--color-bg-skills);
   z-index: 3;
-  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
   text-align: center;
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+.skills-wrap {
+  padding: 3px 0;
+  background-color: var(--color-bg-dark);
+  clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+}
+.level {
+  color: var(--color-text-alt);
+  font-size: 1.25rem;
+  grid-column: span 3;
+  padding: 0.5rem;
+  /* text-shadow: 1px 1px 1px var(--color-text-alt); */
 }
 .skillset {
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.skill {
+  border: 1px solid var(--color-white);
+  border-radius: 5px;
+  background-color: var(--color-bg-dark);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  box-shadow: 5px 5px 5px var(--color-bg-dark);
+}
+.skill-icon {
+  height: 48px;
+  background-color: var(--color-white);
 }
 /* end - skills */
 
@@ -193,6 +230,7 @@ section {
 
 /** footer section **/
 .footer {
+  border-top: 2px solid var(--color-accent);
   background-color: black;
   text-align: center;
   padding: 1rem;
@@ -201,12 +239,6 @@ section {
 }
 /* end - */
 
-.main-heading {
-  font-weight: 500;
-}
-.sub-heading {
-  font-weight: 400;
-}
 .muted {
   opacity: 0.3;
 }
