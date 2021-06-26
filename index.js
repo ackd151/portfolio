@@ -20,4 +20,39 @@ function setActiveNav() {
       link.classList.remove("active");
     }
   }
+  //   for (const skill of skills) {
+  //     console.log(skill.offsetTop);
+  //     if (pos == skill.offsetTop) {
+  //       skill.classList.add("slide-skill");
+  //     }
+  //   }
+}
+
+// Animate name change
+window.setTimeout(nameFade, 2900);
+function nameFade() {
+  const dan = document.getElementById("dan");
+  dan.classList.add("dan");
+  dan.classList.add("dan-pos");
+  const ack = document.getElementById("ack");
+  ack.classList.add("ack");
+  ack.classList.add("ack-pos");
+}
+
+// Animate skills slide-in
+const observer = new IntersectionObserver((skills) => {
+  skills.forEach((skill) => {
+    if (skill.isIntersecting) {
+      setTimeout(() => {
+        addSlide(skill);
+      }, Math.floor(Math.random() * 500));
+    }
+  });
+});
+const skills = document.querySelectorAll(".skill");
+for (const skill of skills) {
+  observer.observe(skill);
+}
+function addSlide(skill) {
+  skill.target.classList.add("slide-skill");
 }
