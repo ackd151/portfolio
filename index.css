@@ -6,11 +6,10 @@
   --color-black: rgb(0, 0, 0);
   --color-bg-dark: rgb(27, 27, 27);
   --color-bg-dark-grad: rgb(52, 52, 52);
-  --color-accent: rgb(0, 255, 255);
-  --color-accent-alt: rgb(246, 3, 243);
-  --color-bg-about: rgb(94, 133, 133);
-  --color-bg-skills: rgb(80, 160, 160);
-  --color-bg-projects: rgb(38, 116, 116);
+  --color-accent: #e0aa3e; /*rgb(0, 255, 255);*/
+  --color-accent-alt: #926f34; /*rgb(246, 3, 243);*/
+  --color-gold: #e0aa3e;
+  --color-gold-dark: #926f34;
 }
 
 *,
@@ -35,13 +34,11 @@ body {
   box-sizing: border-box;
 }
 
-.page {
+/* .page {
   display: grid;
-  /* grid-template-rows: max-content 80vh; */
-}
+  width: 100%;
+} */
 section {
-  display: flex;
-  align-items: center;
   padding: 5rem 0;
 }
 .section-body {
@@ -51,6 +48,13 @@ section {
 .section-heading {
   font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 2rem;
+}
+.section-light {
+  color: var(--color-gold-dark);
+}
+.section-dark {
+  color: var(--color-gold);
 }
 
 /** nav section **/
@@ -119,7 +123,7 @@ section {
   gap: 1rem;
 }
 .link-icon {
-  height: 50px;
+  height: 3.5rem;
   fill: var(--color-accent);
   padding: 4px;
   border-radius: 50%;
@@ -137,7 +141,7 @@ section {
 
 /** header section **/
 .header {
-  height: 95vh;
+  height: 98vh;
   background-color: var(--color-bg-dark);
   color: var(--color-text);
   z-index: 5;
@@ -169,14 +173,13 @@ section {
 
 /** about section **/
 .about {
-  height: 80vh;
+  /* height: 80vh; */
   padding: 5rem 0;
   color: var(--color-text-alt);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 4;
 }
 /* end - about */
 
@@ -184,28 +187,29 @@ section {
 .skills {
   background-color: var(--color-bg-skills);
   background-color: var(--color-bg-dark);
-  z-index: 3;
   text-align: center;
   border-top: 1px solid var(--color-white);
   border-bottom: 1px solid var(--color-white);
   box-shadow: 0 5px 5px var(--color-black), 0 -5px 5px var(--color-bg-dark);
 }
 .level {
-  color: var(--color-text);
+  color: var(--color-gold);
   font-size: 1.25rem;
-  grid-column: span 3;
-  padding: 0.5rem;
+  margin: 1rem auto;
 }
 .skillset {
   margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 1rem;
 }
 .skill {
   border: 1px solid var(--color-white);
   border-radius: 5px;
   background-color: var(--color-bg-dark);
+  width: 250px;
   display: grid;
   grid-template-columns: max-content 1fr;
   align-items: center;
@@ -220,36 +224,32 @@ section {
 }
 .skill-icon {
   height: 48px;
+  padding: 0.25rem;
   background-color: var(--color-white);
 }
 /* end - skills */
 
 /** projects section **/
 .projects {
-  height: 80vh;
   color: var(--color-text-alt);
-  z-index: 2;
-  display: grid;
-  grid-template-rows: max-content 1fr;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 .project-cards {
   margin: 0 auto;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  grid-template-columns: repeat(3, 250px);
   text-align: center;
   align-items: center;
-  height: 500px; /* keep same */
 }
 
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 500px; /* keep same */
+  height: 500px;
+  width: 250px;
 }
 
 .card-face {
@@ -299,7 +299,6 @@ section {
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
 }
 .app-image {
-  /* object-fit: contain; */
   width: 100%;
   height: auto;
 }
@@ -342,7 +341,7 @@ section {
   font-size: 0.8rem;
   box-shadow: 0 -5px 5px var(--color-black);
 }
-/* end - */
+/* end - footer */
 
 #iel {
   opacity: 0;
@@ -353,14 +352,14 @@ section {
   animation: shiftRight 2s ease-in;
 }
 .dan-pos {
-  transform: translateX(26px);
+  transform: translateX(28%);
 }
 .ack {
   display: inline-block;
   animation: shiftLeft 2s ease-in;
 }
 .ack-pos {
-  transform: translateX(-26px);
+  transform: translateX(-12%);
 }
 
 /* animations */
@@ -378,7 +377,7 @@ section {
     transform: translateX(0);
   }
   100% {
-    transform: translate(26px);
+    transform: translate(28%);
   }
 }
 
@@ -387,6 +386,14 @@ section {
     transform: translateX(0);
   }
   100% {
-    transform: translate(-26px);
+    transform: translate(-12%);
+  }
+}
+
+/* media queries */
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 75%;
   }
 }
