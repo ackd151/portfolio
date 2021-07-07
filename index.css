@@ -62,64 +62,7 @@ section {
   color: var(--color-accent);
 }
 
-/** nav section **/
-.nav {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 100;
-}
-.link-wrapper:hover {
-  background-color: rgb(0, 0, 0);
-  width: 50px;
-}
-.section-nav-link {
-  width: 55px;
-  height: 48px;
-  padding: 0.5rem;
-  background-color: rgb(0, 0, 0);
-  opacity: 0.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 1s;
-}
-.nav-icon {
-  width: 2rem;
-  fill: var(--color-white);
-  opacity: 0.5;
-}
-.link-text {
-  opacity: 0;
-  display: none;
-  transition: all 1s;
-}
-.active {
-  opacity: 0.75;
-  color: var(--color-accent-alt);
-}
-.active .nav-icon {
-  fill: var(--color-accent-alt);
-}
-.link-wrapper:hover .section-nav-link {
-  transform: translateX(10px);
-  opacity: 1;
-  clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
-  width: 140px;
-  padding-right: 2rem;
-  color: var(--color-accent);
-}
-.link-wrapper:hover .link-text {
-  display: inline;
-  opacity: 1;
-}
-.link-wrapper:hover .nav-icon {
-  fill: var(--color-accent);
-  opacity: 1;
-}
-
+/** Contact links **/
 .contact-links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -142,9 +85,10 @@ section {
   transform: scale(1.1);
   cursor: pointer;
 }
+/* end - contact links*/
 
-/* mobile nav */
-.nav-mobile {
+/** nav section **/
+.nav {
   color: black;
 }
 .nav-cb {
@@ -159,7 +103,6 @@ section {
 }
 
 .nav-button {
-  background-color: var(--color-white);
   height: 5.5rem;
   width: 5.5rem;
   position: fixed;
@@ -320,6 +263,31 @@ section {
   color: var(--color-text-alt);
   text-align: center;
 }
+.contact-link {
+  margin: 1rem auto;
+  padding: 0.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--color-bg-dark);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+.arrow {
+  transition: all 0.5s;
+  margin-left: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+.contact-link:hover {
+  background-color: var(--color-accent-alt);
+  color: var(--color-white);
+}
+.contact-link:hover .arrow {
+  transform: rotate(90deg);
+  fill: var(--color-white);
+}
 /* end - about */
 
 /** skills section **/
@@ -429,7 +397,7 @@ section {
 .image-wrap {
   position: absolute;
   top: 50%;
-  transform: translate(-1rem, -70%);
+  transform: translate(-1rem, -75%);
   opacity: 0.9;
   width: 100%;
   height: 50%;
@@ -498,7 +466,7 @@ section {
   height: 10rem;
 }
 #submit {
-  background-color: var(--color-accent-alt)
+  background-color: var(--color-accent-alt);
 }
 #submit:hover {
   background-color: var(--color-accent);
@@ -515,7 +483,8 @@ section {
   box-shadow: 0 0 10px var(--color-accent-alt);
   position: relative;
 }
-.hr::before, .hr::after {
+.hr::before,
+.hr::after {
   content: "";
   width: 25vw;
   height: 1px;
@@ -529,7 +498,7 @@ section {
 }
 .hr::after {
   right: -27vw;
-} 
+}
 .legal {
   font-size: 85%;
 }
@@ -594,7 +563,9 @@ section {
   html {
     font-size: 75%;
   }
-  .about, .projects, .footer {
+  .about,
+  .projects,
+  .footer {
     font-size: 125%;
   }
 }
