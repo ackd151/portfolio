@@ -10,6 +10,7 @@
   --color-accent-alt: rgb(146, 111, 52);
 }
 
+/** base **/
 *,
 *::after,
 *::before {
@@ -61,8 +62,9 @@ section {
 .section-dark {
   color: var(--color-accent);
 }
+/* end - base */
 
-/** Contact links **/
+/** contact links **/
 .contact-links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -287,6 +289,13 @@ section {
 .contact-link:hover .arrow {
   transform: rotate(90deg);
   fill: var(--color-white);
+}
+.hello {
+  font-size: 2.5rem;
+  color: var(--color-accent-alt);
+}
+.intro {
+  display: inline;
 }
 /* end - about */
 

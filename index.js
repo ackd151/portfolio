@@ -30,3 +30,25 @@ const skills = document.querySelectorAll(".skill");
 for (const skill of skills) {
   observer.observe(skill);
 }
+
+const greetings = [
+  "Hi",
+  "Hallo",
+  "Hola",
+  "Namaste",
+  "Zdravstvuyte",
+  "Nǐn hǎo",
+  "Salve",
+  "Konnichiwa",
+  "Ahlan",
+  "Anyoung",
+  "Shalom",
+];
+let greetIndex = 0;
+const greetSpan = document.getElementById("hello");
+const greet = () => {
+  greetIndex = ++greetIndex % greetings.length;
+  greetSpan.innerText = greetings[greetIndex];
+};
+
+setInterval(greet, 3000);
