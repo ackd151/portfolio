@@ -31,6 +31,7 @@ for (const skill of skills) {
   observer.observe(skill);
 }
 
+// Change greeting lang on timer
 const greetings = [
   "Hi",
   "Hallo",
